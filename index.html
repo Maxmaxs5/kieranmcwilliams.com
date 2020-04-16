@@ -1,0 +1,231 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta property="og:title" content="Kieran McWilliams"/>
+        <meta property="og:image" content="Kieran_McWilliams_WebsiteImage.png"/>
+        <meta property="og:description" content="Kieran McWilliams Personal Website"/>
+        <meta property="og:url" content="https://kieranmcwilliams.com" />
+
+        <title>Kieran McWilliams</title>
+
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="index.js"></script>
+
+        <div id="navbar">
+            <div id="navbarContainer">
+                <a id="navbarImage" href="#home"></a>
+                <a id="navbarName" href="#">Kieran McWilliams</a>
+
+                <div id="navbarButtonsDiv">
+                    <a href="#about" class="navbarButton">About</a>
+                    <a href="#experience" class="navbarButton">Experience</a>
+                    <a href="#projects" class="navbarButton">Projects</a>
+                    <a href="#skills" class="navbarButton">Skills</a>
+                    <a href="#interests" class="navbarButton">Interests</a>
+                    <a href="https://www.linkedin.com/in/kieranmcwilliams" class="navbarButton icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://drive.google.com/file/d/1vKOLQknJNMIQ5VQG1zX0gqde9K5-visa/view?usp=sharing" class="navbarButton icon"><i class="fa fa-file"></i></a>
+                    <!-- <a href="https://github.com/Maxmaxs5" class="navbarButton icon"><i class="fa fa-github"></i></a> -->
+                </div>
+
+                <!-- TESTING -->
+                <div style="display:none">
+                    <p id="testScroll"></p>
+                    <p id="testWidth"></p>
+                    <p id="testWidth2"></p>
+                    <p id="testHeight"></p>
+                </div>
+
+                <button id="mobileNavbarMenu">Menu <i class="fa fa-bars"></i></button>
+            </div>
+        </div>
+
+        <div id="mobileNavbar" style="height:0px">
+            <div class="navbarButtonMobileDiv">
+                <a href="#about" class="navbarButtonMobile">About</a>
+            </div>
+            <div class="navbarButtonMobileDiv">
+                <a href="#experience" class="navbarButtonMobile">Experience</a>
+            </div>
+            <div class="navbarButtonMobileDiv">
+                <a href="#projects" class="navbarButtonMobile">Projects</a>
+            </div>
+            <div class="navbarButtonMobileDiv">
+                <a href="#skills" class="navbarButtonMobile">Skills</a>
+            </div>
+            <div class="navbarButtonMobileDiv">
+                <a href="#interests" class="navbarButtonMobile">Interests</a>
+            </div>
+            <div class="navbarButtonMobileDiv">
+                <a href="https://www.linkedin.com/in/kieranmcwilliams" class="navbarButtonMobile icon"><i class="fa fa-linkedin"></i></a>
+                <a href="https://drive.google.com/file/d/1vKOLQknJNMIQ5VQG1zX0gqde9K5-visa/view?usp=sharing" class="navbarButtonMobile icon"><i class="fa fa-file"></i></a>
+                <!-- <a href="https://github.com/Maxmaxs5" class="navbarButtonMobile icon"><i class="fa fa-github"></i></a> -->
+            </div>    
+        </div>
+
+        <!-- <img id="kieranMcWilliamsWebsiteImage" href="https://kieranmcwilliams.com/Kieran_McWilliams_WebsiteImage.png" src="Kieran_McWilliams_WebsiteImage.png"> -->
+
+        <div id="bodyContainer">
+            <div id="profileDiv" class="containerDiv">
+                <div id="profilePicture"></div>
+                <h3 id="nameHeader">Kieran McWilliams</h3>
+                <a id="email" href="mailto:kieran.j@mcwilliams.cc">Kieran.j@McWilliams.cc</a>
+                <p id="resumeHeader"><a href="https://drive.google.com/file/d/1vKOLQknJNMIQ5VQG1zX0gqde9K5-visa/view?usp=sharing">Resume</a></p>
+            </div>
+
+            <div id="aboutDiv" class="containerDiv">
+                <p id="about" class="navbarJump"></p>
+                <h2 class="containerDivHeader">About</h2>
+
+                <p id="aboutText">
+                    I am a Computer Science major at the Jeffrey S. Raikes School of Computer Science and Management, within the University of Nebraska-Lincoln.
+                    I have four years of programming and web development experience through personal projects, classes, and a high-school internship.
+                    I aspire to further the revolutionary advancements in technology and develop meaningful and lasting innovations to benefit the world.
+                </p>
+            </div>
+
+            <div id="experienceDiv" class="containerDiv">
+                <p id="experience" class="navbarJump"></p>
+                <h2 class="containerDivHeader">Work Experience</h2>
+
+                <div class="innerExperienceDiv">
+                    <h2 class="entryTitle">Gallup: Software Development Intern</h2>
+                    <p class="entryYears">Full time summers of 2017, 2018, and 2019</p>
+
+                    <br>
+                    <ul class="entryInfo">
+                        <li>Developed an internal student management system and a strengths-based team generator.</li>
+                        <li>Overhauled the coaching blog, a site with around 40,000 monthly visitors, allowing greater ease of access.</li>
+                        <li>Worked directly with clients to get feedback on progress. Served as team lead on both projects.</li>
+                        <li>Used JavaScript, HTML/CSS, JIRA, and Agile Methodologies.</li>
+                    </ul>
+                </div>
+                <div class="innerExperienceDiv">
+                    <h2 class="entryTitle">Freelance Developer</h2>
+                    <p class="entryYears">Fall 2018 - Present</p>
+
+                    <br>
+                    <ul class="entryInfo">
+                        <li>Maintained websites for six local businesses using an Azure Virtual Machine (VM).</li>
+                        <li>Developed a technical room for House of Conundrum Escape Room using Windows Subsystem for Linux.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="projectsDiv" class="containerDiv">
+                <p id="projects" class="navbarJump"></p>
+                <h2 class="containerDivHeader">Personal Projects</h2>
+
+                <div id="innerProjectsDiv">
+                    <div class="eachProjectDiv">
+                        <p class="projectText">Primary personal project, a complete management app for service groups and volunteers, which took hundreds of hours, using JavaScript, HTML, and CSS.</p>
+                        <a class="projectButtonHref" href="https://servicesimplified.org">
+                            <button class="projectButton">ServiceSimplified.org</button>
+                            <div class="projectMobileAppsDiv">
+                                <a style="text-decoration:none" href='https://play.google.com/store/apps/details?id=org.servicesimplified&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+                                    <img id="googlePlayBadge" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
+                                </a>
+                                <a id="appleAppStoreBadge" href="https://itunes.apple.com/us/app/servicesimplified/id1434347092?mt=8">
+                                </a>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="eachProjectDiv">
+                        <p class="projectText">Created voice recognition interaction with MyFitnessPal, through an Alexa Skill using AWS Lambda and Node.js with Selenium Webdriver for the back-end.</p>
+                        <!-- <a class="projectButtonHref" href="http://coaching.gallup.com/p/theme-thursday-companion-guides.html">
+                            <button class="projectButton">Gallup Coaching Blog</button>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="skillsDiv" class="containerDiv">
+                <p id="skills" class="navbarJump"></p>
+                <h2 class="containerDivHeader">Skills</h2>
+
+                <div id="innerSkillsDiv">
+                    <div class="proficiencyDiv">
+                        <h2 class="proficiencyHeader">Proficient:</h2>
+                        <p class="proficiencyText">JavaScript, HTML, CSS, Meteor.js, MongoDB, Ubuntu VMs</p>                      
+                    </div>
+                    <div class="proficiencyDiv">
+                        <h2 class="proficiencyHeader">Intermediate Proficiency:</h2>
+                        <p class="proficiencyText">Node.js, Web Scraping, Alexa Skills, Java, C#, Python</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="interestsDiv" class="containerDiv">
+                <p id="interests" class="navbarJump"></p>
+                <h2 class="containerDivHeader">Other Interests</h2>
+    
+                <div id="innerInterestsDiv">
+                    <!-- <div class="eachInterestDiv">
+                        <h2 class="interestHeader">Piano:</h2>
+                        <p class="interestText">I have played piano since the age of 8, always enjoying the beauty of music and building neural connections. My current repertoire includes <a href="https://youtu.be/HdCwT5k8TkQ">Moonlight Sonata</a>, <a href="https://youtu.be/_6qaVIMPJco">Sky Full of Stars</a>, and <a href="https://youtu.be/wgOWmNMXxcQ">Für Elise</a>.</p>
+                    </div>
+                    <div class="eachInterestDiv">
+                        <h2 class="interestHeader">Fitness, Health, and Wellness:</h2>
+                        <p class="interestText">Over the past three years, I have grown exponentially deeper in my knowledge by researching best practices, collaborating, and working out often, in addition to being raised in a healthy family.</p>
+                    </div> -->
+                    <div class="eachInterestDiv">
+                        <h2 class="interestHeader">Timelapsing and Photography:</h2>
+                        <p class="interestText">I have always been fascinated by the beauty of nature. Recently, I built my own timelapsing setup using an Arduino and other special camera accessories. I then edit and finalize them through Lightroom, Photoshop, and Premiere Pro, evidenced in <a href="https://youtu.be/UJ8Q9-o8UwI">The Glorious Grind</a>, my first compilation.
+                    </div>
+                    <div class="eachInterestDiv">
+                        <h2 class="interestHeader">Piano and Music:</h2>
+                        <p class="interestText">I have played piano since the age of 8, always enjoying the beauty of music and building neural connections. You can view my current repertoire on YouTube at <a href="https://www.youtube.com/playlist?list=PLnfurFeNccJtVRPSF-hjuwY2bJ7h5oNHz">Kieran's Piano Songs</a>. I also composed two original pieces of music, <a href="https://youtu.be/fcAefgC-RQk">Whitewater</a> and the soundtrack for <a href="https://youtu.be/UJ8Q9-o8UwI">The Glorious Grind</a>.
+                    </div>
+                    <div class="eachInterestDiv">
+                        <h2 class="interestHeader">Service and Involvement:</h2>
+                        <p class="interestText">Throughout my life, I have always sought to serve and sacrifice for others, following the fire of passion within me. I am an active participant in everything I do, I often tutor my classmates and coworkers, and I am typically appointed to leadership positions within service groups and other clubs.</p>
+                   </div>
+                    <div class="eachInterestDiv">
+                        <h2 class="interestHeader">Fitness, Health, and Wellness:</h2>
+                        <p class="interestText">Over the past five years, I have grown exponentially deeper in my knowledge by researching best practices, collaborating, and working out often, in addition to being raised in a healthy family. I also enjoy the culinary arts, experimenting and perfecting a variety of delicious recipes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footerDiv" class="containerDiv">
+                <div class="innerFooterDiv">
+                    <p class="footerText">Info:</p>
+
+                    <p class="footerInfoTitle">Email: </p>
+                    <p class="footerInfo"><a href="mailto:kieran.j@mcwilliams.cc">Kieran.j@McWilliams.cc</a></p>
+
+                    <br>
+                    <!-- p class="footerInfoTitle">Phone: </p>
+                    <p class="footerInfo">402-617-6033</p> -->
+                    <p class="footerInfoTitle">Phone: </p>
+                    <p class="footerInfo">Available Upon Request</p>
+
+                    <br>
+                    <p class="footerInfo"><a href="https://drive.google.com/file/d/1vKOLQknJNMIQ5VQG1zX0gqde9K5-visa/view?usp=sharing">Resume</a></p>
+                    
+                    <!-- <p style="display:none" class="footerInfo document"><a href="mailto:kieran.j@mcwilliams.cc">Resume</a></p>
+                    <p style="display:none" class="footerInfo document"><a href="mailto:kieran.j@mcwilliams.cc">Transcript</a></p> -->
+                </div>
+                <div class="innerFooterDiv">
+                    <p class="footerText">Find Me Online:</p>
+                    <a class="footerIconDiv" href="https://www.linkedin.com/in/kieranmcwilliams">
+                        <i class="fa fa-linkedin footerIcon"></i>
+                    </a>
+                    <!-- <a class="footerIconDiv" href="https://github.com/Maxmaxs5">
+                        <i class="fa fa-github footerIcon"></i>
+                    </a> -->
+                </div>
+
+                <p id="footerMadeByText">Handcrafted by Kieran</p>
+            </div>
+        </div>
+    </body>
+</html>

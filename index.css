@@ -1,0 +1,806 @@
+* {
+    transition: all .3s;
+
+    --main-color-dark: #333;
+    --main-color-light: white;
+
+    /* --main-color-blue: #1278a1; */
+    /* --main-color-blue: #3ab7ea; */
+    --main-color-blue: #00a0d0;
+    --main-color-blue-focus: #0080b0;
+}
+
+body, h2, h3 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: 'Montserrat - Font';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm45xW4.ttf) format('truetype');
+}
+
+/*Navbar*/
+#navbar {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 12vh;
+    width: 100%;
+    background-color: #333;
+    background-color: var(--main-color-dark, #333);
+    box-shadow: 0px 1px 4px rgba(0,0,0,.5);
+}
+
+#navbarContainer {
+    display: flex;
+    height: 12vh;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#navbarImage {
+    display: inline-block;
+    margin: 2vh 0vh 2vh 1vh;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 50%;
+    background: url("Kieran_McWilliams_K.png");
+    background-size: cover;
+}
+
+#navbarName {
+    width: fit-content;
+    height: 8vh;
+    line-height: 8vh;
+    margin: 2vh 0;
+    padding: 0 2vh;
+    font-size: 5vh;
+    color: white;
+    color: var(--main-color-light, white);
+    cursor: pointer;
+    display: inline-block;
+}
+
+#navbarButtonsDiv {
+    position: fixed;
+    top: 0;
+    right: 5%;
+    width: fit-content;
+    height: 12vh;
+    margin: 0;
+    padding: 0 2vh;
+    display: inline-block;
+}
+
+.navbarButton {
+    width: fit-content;
+    height: 8vh;
+    line-height: 8vh;
+    margin: 1vh 0;
+    padding: 1vh 2vh;
+    font-size: 2vh;
+    color: white;
+    color: var(--main-color-light, white);
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Montserrat - Font";
+}
+
+.navbarButton.icon {
+    font-size: 2.25vh;
+}
+
+.navbarButton.active, .navbarButtonMobileDiv.active {
+    background-color: #00a0d0;
+    background-color: var(--main-color-blue, #00a0d0);
+}
+
+.navbarButton.active:hover, .navbarButtonMobileDiv.active:hover > .navbarButtonMobile {
+    color: white;
+    color: var(--main-color-light, white);
+}
+
+#mobileNavbarMenu {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    height: 5vh;
+    margin: 1.5vh;
+    padding: 1vh 1.5vh;
+    color: white;
+    color: var(--main-color-light, white);
+    background-color: transparent;
+    border: 1px solid white;
+    border: 1px solid var(--main-color-light, white);
+    border-radius: 5px;
+    outline: 0;
+    cursor: pointer;
+}
+
+#mobileNavbarMenu:hover, #mobileNavbarMenu:focus {
+    background-color: #00a0d0;
+    background-color: var(--main-color-blue, #00a0d0);
+    border-color: #00a0d0;
+    border-color: var(--main-color-blue, #00a0d0);
+}
+
+/* Mobile Navbar */
+#mobileNavbar {
+    position: fixed;
+    display: none;
+    z-index: 2;
+    top: 8vh;
+    height: 0px;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    background-color: var(--main-color-dark, #333);
+    border: 0;
+}
+
+#mobileNavbar.open {
+    border-top: 1px solid white;
+    border-top: 1px solid var(--main-color-light, white);
+    padding: 1vh 0;
+}
+
+.navbarButtonMobileDiv {
+    padding: 1.5vh 0;
+}
+
+.navbarButtonMobile {
+    font-size: 1em;
+    color: white;
+    color: var(--main-color-light, white);
+    padding: 1.5vh 2vh;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Montserrat - Font";
+}
+
+#navbarName:hover, .navbarButton:hover, .navbarButtonMobileDiv:hover > .navbarButtonMobile:not(.icon), .navbarButtonMobile.icon:hover {
+    color: #00a0d0;
+    color: var(--main-color-blue, #00a0d0);
+}
+
+#navbar a {
+    text-decoration: none;
+}
+
+/*Navbar jumps and scrolls*/
+.navbarJump {
+    position: relative;
+    height: 0;
+    width: 0;
+    margin: 0;
+    top: -14vh;
+}
+
+#navbar.scrolled, #navbarContainer.scrolled, #navbarButtonsDiv.scrolled {
+    height: 8vh;
+}
+
+#navbarName.scrolled {
+    font-size: 3.5vh;
+}
+
+#navbarName.scrolled, .navbarButton.scrolled {
+    line-height: 4vh;
+    height: 4vh;
+}
+
+#navbarImage.scrolled {
+    margin: 1.25vh 0vh 1.25vh 1vh;
+    height: 5.5vh;
+    width: 5.5vh;
+}
+
+#bodyContainer.scrolled {
+    margin-top: 8vh;
+}
+
+
+
+/*Body and sections*/
+#bodyContainer {
+    width: 100%;
+    height: 92%;
+    margin-top: 12vh;
+    text-align: center;
+}
+
+.containerDiv:nth-child(odd), #footerDiv {
+    padding: 6vh 0;
+    color: white;
+    color: var(--main-color-light, white);
+    background-color: #00a0d0;
+    background-color: var(--main-color-blue, #00a0d0);
+}
+
+.containerDiv:nth-child(even) {
+    padding: 6vh 0;
+    color: #333;
+    color: var(--main-color-dark, #333);
+    background-color: white;
+    background-color: var(--main-color-light, white);
+}
+
+.containerDivHeader {
+    font-size: 2.5em;
+    width: fit-content;
+    display: table;
+    margin: auto;
+}
+
+#nameHeader::after, .containerDiv:nth-child(odd) .containerDivHeader::after {
+    content: "";
+    display: block;
+    height: 4px;
+    margin-top: 4px;
+    background-color: white;
+    background-color: var(--main-color-light, white);
+}
+
+.containerDiv:nth-child(even) .containerDivHeader::after {
+    content: "";
+    display: block;
+    height: 4px;
+    margin-top: 4px;
+    background-color: #333;
+    background-color: var(--main-color-dark, #333);
+}
+
+/* #backgroundPicture {
+    display: block;
+    height: 40vh;
+    width: 100%;
+    background: url("https://images.pexels.com/photos/247791/pexels-photo-247791.png?auto=compress&cs=tinysrgb&h=750&w=1260") no-repeat;
+    background-size: cover;
+} */
+
+#profilePicture {
+    display: block;
+    margin: auto;
+    height: 280px;
+    width: 280px;
+    border: 6px solid #333;
+    border: 6px solid var(--main-color-dark, #333);
+    border-radius: 50%;
+    background: url("Kieran_Headshot_Optimized.jpg") 40% 40% no-repeat;
+    background-size: cover;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.5);
+}
+
+#nameHeader {
+    font-size: 3.3em;
+    width: fit-content;
+    display: table;
+    margin: auto;
+    margin-top: .15em;
+    margin-bottom: .3em;
+}
+
+#email, #resumeHeader > a {
+    color: white;
+    color: var(--main-color-light, white);
+    font-size: 1.1em;
+    text-decoration: none;
+    margin-bottom: 1vh;
+}
+
+#resumeHeader {
+    margin-top: .3em;
+}
+
+#email:hover, #resumeHeader > a:hover {
+    text-decoration: underline;
+}
+
+#aboutText {
+    width: 65%;
+    margin: auto;
+    margin-top: 4vh;
+    font-size: 1.1em;
+    line-height: 1.7em;
+    font-family: "Montserrat - Font";
+}
+
+
+/*Projects, Experience, Skills, Interests*/
+#innerProjectsDiv, #innerExperienceDiv, #innerSkillsDiv, #innerInterestsDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4vh;
+}
+
+.eachProjectDiv, .eachExperienceDiv, .proficiencyDiv, .eachInterestDiv {
+    width: 49%;
+    text-align: center;
+    transition: none;
+}
+
+.eachInterestDiv:nth-child(-n+2) {
+    margin-bottom: 4vh;
+}
+
+.proficiencyHeader, .experienceHeader, .interestHeader {
+    margin: 0;
+    margin-bottom: 1em;
+    font-size: 1.7em;
+}
+
+.projectText, .experienceText, .proficiencyText, .interestText {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1em;
+    font-size: 1.1em;
+    line-height: 1.7em;
+    font-family: "Montserrat - Font";
+}
+
+
+.innerExperienceDiv {
+    padding: 4vh 8vw;
+    text-align: left;
+}
+
+#experienceDiv .innerExperienceDiv:nth-last-child(1) {
+    padding-bottom: 0;
+}
+
+.entryTitle {
+    margin: 0;
+    font-size: 1.65em;
+}
+
+.entrySubtitle {
+    margin: 0;
+    margin-top: 4px;
+    font-size: 1.35em;
+}
+
+.entryYears {
+    margin: 1.5em 0 .5em 0;
+    font-size: 1.15em;
+}
+
+.entryInfo {
+    margin: 0;
+    font-family: "Montserrat - Font";
+    font-size: .9em;
+    line-height: 2em;
+}
+
+.entryHref {
+    color: white;
+    color: var(--main-color-light, white);
+}
+
+.projectButtonHref {
+    color: white;
+    color: var(--main-color-light, white);
+    text-decoration: none;
+}
+
+.projectButton {
+    font-size: 1.2em;
+    padding: .75em 1em;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    color: var(--main-color-light, white);
+    cursor: pointer;
+    background-color: #00a0d0;
+    background-color: var(--main-color-blue, #00a0d0);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, .2);
+    transform: scale(1);
+    font-family: "Playfair Display", serif;
+    font-weight: lighter;
+}
+
+.projectButton:hover, .projectButton:focus {
+    background-color: #0080b0;
+    background-color: var(--main-color-blue-focus, #0080b0);
+    box-shadow: 1px 2px 12px rgba(0, 0, 0, .5);
+    transform: scale(1.05);
+}
+
+#googlePlayBadge {
+    height: 5rem;
+    margin-bottom: -.8rem;
+    margin-top: .3rem;
+}
+
+#appleAppStoreBadge {
+    height: 3.3rem; 
+    width: 11.2rem;
+    margin-top: .95rem;
+
+    display: inline-block;
+    overflow: hidden;
+    background: url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;
+    background-size: contain;
+}
+
+#googlePlayBadge:hover, #googlePlayBadge:focus, #appleAppStoreBadge:hover, #appleAppStoreBadge:focus {
+    transform: scale(1.05);
+}
+
+.interestText a {
+    color: #00a0d0;
+    color: var(--main-color-blue, #00a0d0);
+}
+
+
+
+/*Footer*/
+#footerDiv {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background-color: #333;
+    background-color: var(--main-color-dark, #333);
+}
+
+.innerFooterDiv {
+    width: 49%;
+    text-align: center;
+}
+
+.footerText {
+    font-size: 1.2em;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+.footerInfoTitle, .footerInfo {
+    font-size: 1.05em;
+    margin: 0;
+    margin-bottom: .5em;
+    display: inline-block;
+}
+
+.footerInfoTitle:nth-last-child(1), .footerInfo:nth-last-child(1) {
+    margin-bottom: 0;
+}
+
+.footerInfo a {
+    color: white;
+    color: var(--main-color-light, white);
+}
+
+.footerInfo a:hover {
+    color: #00a0d0;
+    color: var(--main-color-blue, #00a0d0);
+}
+
+.footerInfo.document:nth-last-child(1) {
+    margin-left: 5vh;
+}
+
+.footerIconDiv {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    margin: 0 1.5%;
+    border: 2px solid white;
+    border: 2px solid var(--main-color-light, white);
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #333;
+    background-color: var(--main-color-dark, #333);
+}
+
+.fa.footerIcon {
+    font-size: 20px;
+    color: white;
+    color: var(--main-color-light, white);
+}
+
+.footerIconDiv:hover, .footerIconDiv:focus {
+    background-color: white;
+    background-color: var(--main-color-light, white);
+}
+
+.footerIconDiv:hover .fa.footerIcon, .footerIconDiv:focus .fa.footerIcon {
+    color: #00a0d0;
+    color: var(--main-color-blue, #00a0d0);
+}
+
+#footerMadeByText {
+    position: absolute;
+    font-size: 9px;
+    right: 5px;
+    bottom: 5px;
+    margin: 0;
+}
+
+
+
+/*Take away margin-left from navbar on smaller screen*/
+@media only screen and (min-width: 0px) and (max-width: 1100px) {
+/* @media only screen and (min-width: 0px) and (max-width: 991px) { */
+    #navbarContainer {
+        width: 98%;
+        margin-left: 1%;
+    }
+
+    #navbarContainer.scrolled {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #navbarButtonsDiv {
+        right: 1%;
+    }
+
+    #navbarButtonsDiv.scrolled {
+        right: 0;
+    }
+
+    .navbarButton {
+        padding: 1vh 1.5vh;
+    }
+
+    #aboutText {
+        width: 85%
+    }
+}
+
+/*Make everything scrolled on smaller screens, make innerDivs 100% width, hide navbar and show mobile navbar*/
+/*Portrait*/
+@media only screen and (min-width: 0px) and (max-width: 825px) and (orientation: portrait) {
+    #navbarButtonsDiv {
+        display: none;
+    }
+
+    #mobileNavbar, #mobileNavbarMenu {
+        display: block;
+    }
+
+    #profilePicture {
+        height: 250px;
+        width: 250px;
+    }
+
+    #nameHeader {
+        font-size: 2.5em;
+    }
+
+    #innerProjectsDiv, #innerExperienceDiv, #innerSkillsDiv, #innerInterestsDiv {
+        display: block;
+    }
+    
+    .eachProjectDiv, .eachExperienceDiv, .proficiencyDiv, .eachInterestDiv {
+        width: 100%;
+        margin-bottom: 4vh;
+    }
+
+    .eachProjectDiv:nth-last-child(1), .eachExperienceDiv:nth-last-child(1), .eachInterestDiv:nth-last-child(1) {
+        margin-bottom: 0;
+    }
+
+    .proficiencyHeader, .experienceHeader, .interestHeader {
+        margin-bottom: .5em;
+    }
+
+    .projectText, .experienceText, .proficiencyText, .interestText {
+        width: 95%;
+    }
+
+    .footerInfo.document {
+        display: inline-block;
+    }
+
+    .footerInfo.document:nth-last-child(1) {
+        margin-left: 2vh;
+    }
+}
+
+/*Make everything scrolled on mobile, make innerDivs 100% width, hide navbar and show mobile navbar*/
+/*Portrait*/
+@media only screen and (min-width: 0px) and (max-width: 450px) {
+    #navbarContainer, #navbarContainer.scrolled {
+        width: 98%;
+        margin-left: 1%;
+    }
+
+    #navbar, #navbar.scrolled, #navbarContainer, #navbarContainer.scrolled {
+        height: 10vh;
+    }
+
+    #navbarImage {
+        display: none;
+    }
+
+    #navbarName, #navbarName.scrolled {
+        font-size: 4vh;
+    }
+    
+    #navbarName, #navbarName.scrolled, .navbarButton, .navbarButton.scrolled {
+        line-height: 6vh;
+        height: 6vh;
+    }
+
+    #navbarButtonsDiv {
+        display: none;
+    }
+
+    #mobileNavbarMenu {
+        display: block;
+        height: 6vh;
+        margin: 2vh;
+    }
+
+    #mobileNavbar {
+        display: block;
+        top: 10vh;
+    }
+
+    .navbarButtonMobile {
+        font-size: 1em;
+    }
+
+    .navbarButtonMobile.icon {
+        padding: 1.5vh 1vh;
+    }
+    .navbarButtonMobile.icon:nth-child(1) {
+        padding: 1.5vh 1vh 1.5vh 2.25vh;
+    }
+
+    #bodyContainer {
+        margin-top: 10vh;
+    }
+
+    .containerDiv:nth-child(odd) {
+        padding: 4vh 0;
+    }
+    
+    .containerDiv:nth-child(even) {
+        padding: 4vh 0;
+    }
+
+    .containerDivHeader {
+        font-size: 2.2em;
+    }
+
+    #profilePicture {
+        height: 220px;
+        width: 220px;
+    }
+    
+    #nameHeader {
+        font-size: 2em;
+    }
+
+    #email {
+        font-size: 1em;
+    }
+
+    #aboutText {
+        width: 90%;
+        margin-top: 2vh;
+        font-size: 1.1em;
+    }
+
+    .proficiencyHeader, .experienceHeader, .interestHeader {
+        font-size: 1.5em;
+        margin-bottom: .5em;
+    }
+
+    .footerInfoTitle, .footerInfo {
+        display: block;
+    }
+
+    .footerInfo {
+        font-size: .9em;
+        margin-bottom: 0;
+    }
+}
+
+/*Make everything scrolled on mobile, make innerDivs 100% width, hide navbar and show mobile navbar*/
+/*Landscape*/
+@media only screen and (min-height: 0px) and (max-height: 450px) and (min-width: 0px) and (max-width: 825px) and (orientation: landscape) {
+    #navbar, #navbar.scrolled, #navbarContainer, #navbarContainer.scrolled {
+        height: 14vh;
+    }
+
+    #navbarContainer, #navbarContainer.scrolled {
+        width: 98%;
+        margin-left: 2vh;
+    }
+
+    #navbarImage, #navbarImage.scrolled {
+        height: 10vh;
+        width: 10vh;
+        margin: 2vh 0vh;
+    }
+
+    #navbarName.scrolled {
+        font-size: 5vh;
+    }
+    
+    #navbarName, #navbarName.scrolled, .navbarButton, .navbarButton.scrolled {
+        line-height: 10vh;
+        height: 10vh;
+    }
+
+    #navbarButtonsDiv {
+        display: none;
+    }
+
+    #mobileNavbarMenu {
+        display: block;
+        height: 9vh;
+        margin: 2.5vh;
+        padding: 1vh 2.5vh;
+    }
+
+    #mobileNavbar {
+        display: block;
+        top: 14vh;
+    }
+
+    .navbarButtonMobile {
+        font-size: .9em;
+        margin-left: 2vh;
+    }
+
+    #bodyContainer, #bodyContainer.scrolled {
+        margin-top: 14vh;
+    }
+
+    .containerDiv:nth-child(odd) {
+        padding: 6vh 0;
+    }
+    
+    .containerDiv:nth-child(even) {
+        padding: 6vh 0;
+    }
+
+    .containerDivHeader {
+        font-size: 2.2em;
+    }
+
+    #profilePicture {
+        height: 220px;
+        width: 220px;
+    }
+    
+    #nameHeader {
+        font-size: 2em;
+    }
+
+    #email {
+        font-size: 1em;
+    }
+
+    #aboutText {
+        width: 90%;
+        margin-top: 2vh;
+        font-size: 1.1em;
+    }
+
+    .proficiencyHeader, .experienceHeader, .interestHeader {
+        font-size: 1.333em;
+        margin-bottom: .5em;
+    }
+
+    .projectText, .experienceText, .proficiencyText, .interestText {
+        width: 95%;
+    }
+
+    .footerInfo {
+        font-size: .9em;
+        margin-bottom: 0;
+    }
+}
