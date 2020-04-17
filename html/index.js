@@ -42,8 +42,11 @@ var navbarUpdates = function() {
     //Add navbar buttons to array
     navbarItems = navbarItems.concat(Array.from(navbarButtons));
 
-    // //If scrolled or always on mobile
-    if(pageYOffset >= 10 || window.innerWidth < 825 || window.innerHeight < 416) {
+    // // If scrolled or always on mobile
+    // if(pageYOffset >= 10 || window.innerWidth < 825 || window.innerHeight < 416) {
+
+    //If scrolled
+    if(pageYOffset >= 10) {
         for(var i = 0; i < navbarItems.length; i++) {
             navbarItems[i].classList.add("scrolled");
         }
