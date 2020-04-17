@@ -10,10 +10,17 @@
     --main-color-blue-focus: #0080b0;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body, h2, h3 {
     margin: 0;
-    font-family: "Playfair Display", serif;
-    font-weight: lighter;
+    /* font-family: "Playfair Display", serif;
+    font-weight: lighter; */
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: 350;
 }
 
 @font-face {
@@ -26,28 +33,27 @@ body, h2, h3 {
 /*Navbar*/
 #navbar {
     position: fixed;
-    z-index: 2;
+    z-index: 100;
     top: 0;
     left: 0;
-    height: 12vh;
+    height: 8vh;
     width: 100%;
-    background-color: #333;
-    background-color: var(--main-color-dark, #333);
+    background-color: rgba(0, 0, 0, .25);
     box-shadow: 0px 1px 4px rgba(0,0,0,.5);
 }
 
 #navbarContainer {
     display: flex;
-    height: 12vh;
+    height: 8vh;
     width: 90%;
     margin-left: 5%;
 }
 
 #navbarImage {
     display: inline-block;
-    margin: 2vh 0vh 2vh 1vh;
-    height: 8vh;
-    width: 8vh;
+    margin: 1.25vh 0vh 1.25vh 1vh;
+    height: 5.5vh;
+    width: 5.5vh;
     border-radius: 50%;
     background: url("Kieran_McWilliams_K.png");
     background-size: cover;
@@ -56,14 +62,15 @@ body, h2, h3 {
 #navbarName {
     width: fit-content;
     height: 8vh;
-    line-height: 8vh;
+    line-height: 4vh;
     margin: 2vh 0;
     padding: 0 2vh;
-    font-size: 5vh;
+    font-size: 3.5vh;
     color: white;
     color: var(--main-color-light, white);
     cursor: pointer;
     display: inline-block;
+    font-family: "Montserrat - Font";
 }
 
 #navbarButtonsDiv {
@@ -71,7 +78,7 @@ body, h2, h3 {
     top: 0;
     right: 5%;
     width: fit-content;
-    height: 12vh;
+    height: 8vh;
     margin: 0;
     padding: 0 2vh;
     display: inline-block;
@@ -79,8 +86,8 @@ body, h2, h3 {
 
 .navbarButton {
     width: fit-content;
-    height: 8vh;
-    line-height: 8vh;
+    height: 4vh;
+    line-height: 4vh;
     margin: 1vh 0;
     padding: 1vh 2vh;
     font-size: 2vh;
@@ -115,6 +122,7 @@ body, h2, h3 {
     padding: 1vh 1.5vh;
     color: white;
     color: var(--main-color-light, white);
+    font-family: "Montserrat - Font";
     background-color: transparent;
     border: 1px solid white;
     border: 1px solid var(--main-color-light, white);
@@ -134,7 +142,7 @@ body, h2, h3 {
 #mobileNavbar {
     position: fixed;
     display: none;
-    z-index: 2;
+    z-index: 100;
     top: 8vh;
     height: 0px;
     width: 100%;
@@ -165,6 +173,10 @@ body, h2, h3 {
     font-family: "Montserrat - Font";
 }
 
+.navbarButtonMobile.icon {
+    margin-left: .1em;
+}
+
 #navbarName:hover, .navbarButton:hover, .navbarButtonMobileDiv:hover > .navbarButtonMobile:not(.icon), .navbarButtonMobile.icon:hover {
     color: #00a0d0;
     color: var(--main-color-blue, #00a0d0);
@@ -183,40 +195,22 @@ body, h2, h3 {
     top: -14vh;
 }
 
-#navbar.scrolled, #navbarContainer.scrolled, #navbarButtonsDiv.scrolled {
-    height: 8vh;
+#navbar.scrolled {
+    background-color: #333;
+    background-color: var(--main-color-dark, #333);
 }
-
-#navbarName.scrolled {
-    font-size: 3.5vh;
-}
-
-#navbarName.scrolled, .navbarButton.scrolled {
-    line-height: 4vh;
-    height: 4vh;
-}
-
-#navbarImage.scrolled {
-    margin: 1.25vh 0vh 1.25vh 1vh;
-    height: 5.5vh;
-    width: 5.5vh;
-}
-
-#bodyContainer.scrolled {
-    margin-top: 8vh;
-}
-
 
 
 /*Body and sections*/
 #bodyContainer {
     width: 100%;
     height: 92%;
-    margin-top: 12vh;
+    margin-top: 8vh;
     text-align: center;
+    overflow: hidden;
 }
 
-.containerDiv:nth-child(odd), #footerDiv {
+.containerDiv:nth-child(even) {
     padding: 6vh 0;
     color: white;
     color: var(--main-color-light, white);
@@ -224,7 +218,7 @@ body, h2, h3 {
     background-color: var(--main-color-blue, #00a0d0);
 }
 
-.containerDiv:nth-child(even) {
+.containerDiv:nth-child(odd) {
     padding: 6vh 0;
     color: #333;
     color: var(--main-color-dark, #333);
@@ -239,7 +233,7 @@ body, h2, h3 {
     margin: auto;
 }
 
-#nameHeader::after, .containerDiv:nth-child(odd) .containerDivHeader::after {
+.containerDiv:nth-child(even) .containerDivHeader::after {
     content: "";
     display: block;
     height: 4px;
@@ -248,7 +242,7 @@ body, h2, h3 {
     background-color: var(--main-color-light, white);
 }
 
-.containerDiv:nth-child(even) .containerDivHeader::after {
+.containerDiv:nth-child(odd) .containerDivHeader::after {
     content: "";
     display: block;
     height: 4px;
@@ -257,63 +251,190 @@ body, h2, h3 {
     background-color: var(--main-color-dark, #333);
 }
 
-/* #backgroundPicture {
-    display: block;
-    height: 40vh;
+#profileDivBackground {
+    padding: 0;
+    height: 80vh;
+    margin-top: -5vh;
+}
+
+#profileDivBackground::before {
+    position: absolute;
+    content: '';
     width: 100%;
-    background: url("https://images.pexels.com/photos/247791/pexels-photo-247791.png?auto=compress&cs=tinysrgb&h=750&w=1260") no-repeat;
+    height: 100%;
+    left: 0;
+    top: -5vh;
+    z-index: 10;
+    background: url(Summer_Colorado_Hiking_Sunset_Optimized.jpg) center center no-repeat;
     background-size: cover;
+    filter: brightness(.5);
+}
+
+#profileDiv {
+    position: absolute;
+    z-index: 30;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 15vh 0;
+}
+
+#profileDiv::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 5%;
+    left: 0;
+    bottom: 0;
+    z-index: 30;
+    background: linear-gradient(transparent, black);
+    transform: translate(0, -850%) skew(0, -10deg);
+    box-shadow: 0 10px 10px 0px rgba(0, 0, 0, .2);
+}
+
+#profileDiv::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 33%;
+    left: 0;
+    z-index: 20;
+    background: white;
+    transform: translate(0, 79.5%) skew(0, -10deg);
+}
+
+#profileContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 0 14vw;
+}
+
+#resumePictureContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    /* height: 253px; */
+    width: 175px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(.125em);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.25);
+}
+
+/* #resumePictureContainer::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background: url("file_solid_final.png") 40% 40% no-repeat;
+    background-size: contain; */
+    /* filter: opacity(25%); */
+    /* backdrop-filter: blur(.125em); */
+    /* filter: brightness(.5);
 } */
+
+/* #resumePictureContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    height: 253px;
+    width: 175px; */
+    /* background-color: rgba(0, 0, 0, .25); */
+    /* background: url("file_solid_final.png") 40% 40% no-repeat;
+    background-size: contain;
+    filter: opacity(25%); */
+    /* backdrop-filter: blur(.125em); */
+    /* box-shadow: 0px 0px 10px 0px rgba(0,0,0,.25);
+} */
+
+#resumePictureHeader {
+    margin: 1.5vh;
+}
+
+#resumePicture {
+    margin: 0 1vh 1vh 1vh;
+    height: 206px;
+    width: 160px;
+    border-radius: 3px;
+    background: url(Kieran_Resume_Optimized.png) 40% 40% no-repeat;
+    background-size: cover;
+}
+
+#profilePictureNameEmailResumeContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 0 8vw;
+}
+
+#profilePictureContainer {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 292px;
+    width: 292px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .25);
+    backdrop-filter: blur(.125em);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.25);
+}
 
 #profilePicture {
     display: block;
     margin: auto;
     height: 280px;
     width: 280px;
-    border: 6px solid #333;
-    border: 6px solid var(--main-color-dark, #333);
     border-radius: 50%;
-    background: url("Kieran_Headshot_Optimized.jpg") 40% 40% no-repeat;
+    background: url("Kieran_Headshot_Square_Transparent_Optimized.png") 40% 40% no-repeat;
     background-size: cover;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,.5);
+}
+
+#nameEmailResumeContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-left: 3vw;
+    padding-top: 3vh;
+    text-align: left;
 }
 
 #nameHeader {
-    font-size: 3.3em;
-    width: fit-content;
-    display: table;
-    margin: auto;
-    margin-top: .15em;
-    margin-bottom: .3em;
-}
-
-#email, #resumeHeader > a {
     color: white;
     color: var(--main-color-light, white);
-    font-size: 1.1em;
+    margin-top: .15em;
+    margin-bottom: .3em;
+    font-size: 3em;
+}
+
+#resumeHeader {
+    display: none;
+}
+
+#email, #resumeHeader > a, #resumePictureHeader > a {
+    color: white;
+    color: var(--main-color-light, white);
+    margin-left: .175em;
+    font-size: 1em;
     text-decoration: none;
     margin-bottom: 1vh;
 }
 
-#resumeHeader {
-    margin-top: .3em;
-}
-
-#email:hover, #resumeHeader > a:hover {
+#email:hover, #resumeHeader > a:hover, #resumePictureHeader > a:hover {
     text-decoration: underline;
 }
 
-#aboutText {
-    width: 65%;
+#profileContainerSpacingDiv {
+    height: 1px;
+    width: 1px;
     margin: auto;
-    margin-top: 4vh;
-    font-size: 1.1em;
-    line-height: 1.7em;
-    font-family: "Montserrat - Font";
 }
 
 
-/*Projects, Experience, Skills, Interests*/
+/*About, Experience, Projects, Skills, Interests*/
 #innerProjectsDiv, #innerExperienceDiv, #innerSkillsDiv, #innerInterestsDiv {
     display: flex;
     flex-wrap: wrap;
@@ -335,6 +456,8 @@ body, h2, h3 {
     margin: 0;
     margin-bottom: 1em;
     font-size: 1.7em;
+    font-family: "Playfair Display", serif;
+    font-weight: lighter;
 }
 
 .projectText, .experienceText, .proficiencyText, .interestText {
@@ -346,6 +469,45 @@ body, h2, h3 {
     font-family: "Montserrat - Font";
 }
 
+
+#tiltedAboutDivBackground {
+    z-index: 30;
+    position: absolute;
+    width: 120%;
+    height: 50vh;
+    padding: 0;
+    background: white;
+    transform: translate(-10%, -16%) rotate(-10deg);
+    box-shadow: inset 0 10px 10px 0px rgba(0, 0, 0, .2);
+}
+
+#aboutDiv {
+    z-index: 40;
+    padding: 0 0 6vh 0;
+    position: relative;
+    background: transparent;
+}
+
+#aboutText {
+    width: 65%;
+    margin: auto;
+    margin-top: 4vh;
+    font-size: 1.1em;
+    line-height: 1.7em;
+    font-family: "Montserrat - Font";
+}
+
+#experienceDiv {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    padding: 6vh 5%;
+    transform: rotate(2.5deg) translate(-5%);
+}
+
+#experienceDiv > * {
+    transform: rotate(-2.5deg);
+}
 
 .innerExperienceDiv {
     padding: 4vh 8vw;
@@ -359,17 +521,15 @@ body, h2, h3 {
 .entryTitle {
     margin: 0;
     font-size: 1.65em;
-}
-
-.entrySubtitle {
-    margin: 0;
-    margin-top: 4px;
-    font-size: 1.35em;
+    font-family: "Playfair Display", serif;
+    font-weight: lighter;
 }
 
 .entryYears {
     margin: 1.5em 0 .5em 0;
     font-size: 1.15em;
+    font-family: "Playfair Display", serif;
+    font-weight: lighter;
 }
 
 .entryInfo {
@@ -397,13 +557,13 @@ body, h2, h3 {
     border-radius: 5px;
     color: white;
     color: var(--main-color-light, white);
+    font-family: "Playfair Display", serif;
+    font-weight: lighter;
     cursor: pointer;
     background-color: #00a0d0;
     background-color: var(--main-color-blue, #00a0d0);
     box-shadow: 1px 2px 5px rgba(0, 0, 0, .2);
     transform: scale(1);
-    font-family: "Playfair Display", serif;
-    font-weight: lighter;
 }
 
 .projectButton:hover, .projectButton:focus {
@@ -434,6 +594,15 @@ body, h2, h3 {
     transform: scale(1.05);
 }
 
+#skillsDiv {
+    width: 100%;
+    padding: 6vh 5%;
+    transform: rotate(-2.5deg) translate(-5%);
+}
+#skillsDiv > * {
+    transform: rotate(2.5deg);
+}
+
 .interestText a {
     color: #00a0d0;
     color: var(--main-color-blue, #00a0d0);
@@ -446,6 +615,9 @@ body, h2, h3 {
     display: flex;
     position: relative;
     justify-content: center;
+    padding: 6vh 0;
+    color: white;
+    color: var(--main-color-light, white);
     background-color: #333;
     background-color: var(--main-color-dark, #333);
 }
@@ -531,24 +703,19 @@ body, h2, h3 {
 /* @media only screen and (min-width: 0px) and (max-width: 991px) { */
     #navbarContainer {
         width: 98%;
-        margin-left: 1%;
-    }
-
-    #navbarContainer.scrolled {
-        width: 100%;
-        margin-left: 0;
+        margin-left: .5%;
     }
 
     #navbarButtonsDiv {
-        right: 1%;
-    }
-
-    #navbarButtonsDiv.scrolled {
-        right: 0;
+        right: .5%;
     }
 
     .navbarButton {
         padding: 1vh 1.5vh;
+    }
+
+    #profileContainer {
+        padding: 0 10vw;
     }
 
     #aboutText {
@@ -609,12 +776,12 @@ body, h2, h3 {
 /*Make everything scrolled on mobile, make innerDivs 100% width, hide navbar and show mobile navbar*/
 /*Portrait*/
 @media only screen and (min-width: 0px) and (max-width: 450px) {
-    #navbarContainer, #navbarContainer.scrolled {
+    #navbarContainer {
         width: 98%;
-        margin-left: 1%;
+        margin-left: .5%;
     }
 
-    #navbar, #navbar.scrolled, #navbarContainer, #navbarContainer.scrolled {
+    #navbar, #navbarContainer {
         height: 10vh;
     }
 
@@ -622,11 +789,11 @@ body, h2, h3 {
         display: none;
     }
 
-    #navbarName, #navbarName.scrolled {
+    #navbarName {
         font-size: 4vh;
     }
     
-    #navbarName, #navbarName.scrolled, .navbarButton, .navbarButton.scrolled {
+    #navbarName, .navbarButton {
         line-height: 6vh;
         height: 6vh;
     }
@@ -661,11 +828,11 @@ body, h2, h3 {
         margin-top: 10vh;
     }
 
-    .containerDiv:nth-child(odd) {
+    .containerDiv:nth-child(even) {
         padding: 4vh 0;
     }
     
-    .containerDiv:nth-child(even) {
+    .containerDiv:nth-child(odd) {
         padding: 4vh 0;
     }
 
@@ -710,26 +877,22 @@ body, h2, h3 {
 /*Make everything scrolled on mobile, make innerDivs 100% width, hide navbar and show mobile navbar*/
 /*Landscape*/
 @media only screen and (min-height: 0px) and (max-height: 450px) and (min-width: 0px) and (max-width: 825px) and (orientation: landscape) {
-    #navbar, #navbar.scrolled, #navbarContainer, #navbarContainer.scrolled {
+    #navbar, #navbarContainer {
         height: 14vh;
     }
 
-    #navbarContainer, #navbarContainer.scrolled {
+    #navbarContainer {
         width: 98%;
         margin-left: 2vh;
     }
 
-    #navbarImage, #navbarImage.scrolled {
+    #navbarImage {
         height: 10vh;
         width: 10vh;
         margin: 2vh 0vh;
     }
-
-    #navbarName.scrolled {
-        font-size: 5vh;
-    }
     
-    #navbarName, #navbarName.scrolled, .navbarButton, .navbarButton.scrolled {
+    #navbarName, .navbarButton {
         line-height: 10vh;
         height: 10vh;
     }
@@ -755,15 +918,15 @@ body, h2, h3 {
         margin-left: 2vh;
     }
 
-    #bodyContainer, #bodyContainer.scrolled {
+    #bodyContainer {
         margin-top: 14vh;
     }
 
-    .containerDiv:nth-child(odd) {
+    .containerDiv:nth-child(even) {
         padding: 6vh 0;
     }
     
-    .containerDiv:nth-child(even) {
+    .containerDiv:nth-child(odd) {
         padding: 6vh 0;
     }
 

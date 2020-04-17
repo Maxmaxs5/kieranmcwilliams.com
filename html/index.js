@@ -42,21 +42,17 @@ var navbarUpdates = function() {
     //Add navbar buttons to array
     navbarItems = navbarItems.concat(Array.from(navbarButtons));
 
-    for(var i = 0; i < navbarItems.length; i++) {
-        navbarItems[i].classList.add("scrolled");
-    }
-
     // //If scrolled or always on mobile
-    // if(pageYOffset >= 10 || window.innerWidth < 825 || window.innerHeight < 416) {
-    //     for(var i = 0; i < navbarItems.length; i++) {
-    //         navbarItems[i].classList.add("scrolled");
-    //     }
-    // }
-    // else {
-    //     for(var i = 0; i < navbarItems.length; i++) {
-    //         navbarItems[i].classList.remove("scrolled");
-    //     }
-    // }
+    if(pageYOffset >= 10 || window.innerWidth < 825 || window.innerHeight < 416) {
+        for(var i = 0; i < navbarItems.length; i++) {
+            navbarItems[i].classList.add("scrolled");
+        }
+    }
+    else {
+        for(var i = 0; i < navbarItems.length; i++) {
+            navbarItems[i].classList.remove("scrolled");
+        }
+    }
 
     //Both navbar and mobile navbar buttons
     var navbarButtons = Array.from(document.getElementsByClassName("navbarButton")).concat(Array.from(document.getElementsByClassName("navbarButtonMobile")));
