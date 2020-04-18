@@ -121,10 +121,14 @@ $(document).ready(function() {
         if(mobileNavbar.classList.contains("open")) {
             mobileNavbar.classList.toggle("open");
             mobileNavbar.style.height = "0px";
+
+            document.getElementById("navbar").classList.remove("scrolled");
         }
         else {
             mobileNavbar.classList.toggle("open");
             mobileNavbar.style.height = mobileNavbar.scrollHeight + "px";
+
+            document.getElementById("navbar").classList.add("scrolled");
         }
     });
 
@@ -134,6 +138,8 @@ $(document).ready(function() {
 
             mobileNavbar.classList.remove("open");
             mobileNavbar.style.height = "0px";
+
+            document.getElementById("navbar").classList.remove("scrolled");
         }
     });
 });

@@ -3,12 +3,12 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 
-        <meta property="og:title" content="Kieran McWilliams"/>
-        <meta property="og:image" content="Kieran_McWilliams_WebsiteImage.png"/>
-        <meta property="og:description" content="Kieran McWilliams Personal Website"/>
-        <meta property="og:url" content="https://kieranmcwilliams.com" />
+        <meta property="og:title" content="Kieran McWilliams">
+        <meta property="og:description" content="Kieran McWilliams Personal Website">
+        <meta property="og:url" content="https://kieranmcwilliams.com">
 
         <title>Kieran McWilliams</title>
 
@@ -111,30 +111,32 @@
             </div>
 
             <div id="experienceDiv" class="containerDiv">
-                <p id="experience" class="navbarJump"></p>
-                <h2 class="containerDivHeader">Work Experience</h2>
-
-                <div class="innerExperienceDiv">
-                    <h2 class="entryTitle">Gallup: Software Development Intern</h2>
-                    <p class="entryYears">Full time summers of 2017, 2018, and 2019</p>
-
-                    <br>
-                    <ul class="entryInfo">
-                        <li>Developed an internal student management system and a strengths-based team generator.</li>
-                        <li>Overhauled the coaching blog, a site with around 40,000 monthly visitors, allowing greater ease of access.</li>
-                        <li>Worked directly with clients to get feedback on progress. Served as team lead on both projects.</li>
-                        <li>Used JavaScript, HTML/CSS, JIRA, and Agile Methodologies.</li>
-                    </ul>
-                </div>
-                <div class="innerExperienceDiv">
-                    <h2 class="entryTitle">Freelance Developer</h2>
-                    <p class="entryYears">Fall 2018 - Present</p>
-
-                    <br>
-                    <ul class="entryInfo">
-                        <li>Maintained websites for six local businesses using an Azure Virtual Machine (VM).</li>
-                        <li>Developed a technical room for House of Conundrum Escape Room using Windows Subsystem for Linux.</li>
-                    </ul>
+                <div>
+                    <p id="experience" class="navbarJump"></p>
+                    <h2 class="containerDivHeader">Work Experience</h2>
+    
+                    <div class="innerExperienceDiv">
+                        <h2 class="entryTitle">Gallup: Software Development Intern</h2>
+                        <p class="entryYears">Full time summers of 2017, 2018, and 2019</p>
+    
+                        <br>
+                        <ul class="entryInfo">
+                            <li>Developed an internal student management system and a strengths-based team generator.</li>
+                            <li>Overhauled the coaching blog, a site with around 40,000 monthly visitors, allowing greater ease of access.</li>
+                            <li>Worked directly with clients to get feedback on progress. Served as team lead on both projects.</li>
+                            <li>Used JavaScript, HTML/CSS, JIRA, and Agile Methodologies.</li>
+                        </ul>
+                    </div>
+                    <div class="innerExperienceDiv">
+                        <h2 class="entryTitle">Freelance Developer</h2>
+                        <p class="entryYears">Fall 2018 - Present</p>
+    
+                        <br>
+                        <ul class="entryInfo">
+                            <li>Maintained websites for six local businesses using an Azure Virtual Machine (VM).</li>
+                            <li>Developed a technical room for House of Conundrum Escape Room using Windows Subsystem for Linux.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -144,6 +146,7 @@
 
                 <div id="innerProjectsDiv">
                     <div class="eachProjectDiv">
+                        <h2 class="projectHeader">ServiceSimplified</h2>
                         <p class="projectText">Primary personal project, a complete management app for service groups and volunteers, which took hundreds of hours, using JavaScript, HTML, and CSS.</p>
                         <a class="projectButtonHref" href="https://servicesimplified.org">
                             <button class="projectButton">ServiceSimplified.org</button>
@@ -157,6 +160,7 @@
                         </a>
                     </div>
                     <div class="eachProjectDiv">
+                        <h2 class="projectHeader">Voice to MFP</h2>
                         <p class="projectText">Created voice recognition interaction with MyFitnessPal, through an Alexa Skill using AWS Lambda and Node.js with Selenium Webdriver for the back-end.</p>
                         <!-- <a class="projectButtonHref" href="http://coaching.gallup.com/p/theme-thursday-companion-guides.html">
                             <button class="projectButton">Gallup Coaching Blog</button>
@@ -166,17 +170,19 @@
             </div>
 
             <div id="skillsDiv" class="containerDiv">
-                <p id="skills" class="navbarJump"></p>
-                <h2 class="containerDivHeader">Skills</h2>
-
-                <div id="innerSkillsDiv">
-                    <div class="proficiencyDiv">
-                        <h2 class="proficiencyHeader">Proficient:</h2>
-                        <p class="proficiencyText">JavaScript, HTML, CSS, Meteor.js, MongoDB, Ubuntu VMs</p>                      
-                    </div>
-                    <div class="proficiencyDiv">
-                        <h2 class="proficiencyHeader">Intermediate Proficiency:</h2>
-                        <p class="proficiencyText">Node.js, Web Scraping, Alexa Skills, Java, C#, Python</p>
+                <div>
+                    <p id="skills" class="navbarJump"></p>
+                    <h2 class="containerDivHeader">Skills</h2>
+    
+                    <div id="innerSkillsDiv">
+                        <div class="proficiencyDiv">
+                            <h2 class="proficiencyHeader">Proficient:</h2>
+                            <p class="proficiencyText">JavaScript, HTML, CSS, Meteor.js, MongoDB, Ubuntu VMs</p>                      
+                        </div>
+                        <div class="proficiencyDiv">
+                            <h2 class="proficiencyHeader">Intermediate Proficiency:</h2>
+                            <p class="proficiencyText">Node.js, Web Scraping, Alexa Skills, Java, C#, Python</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -195,19 +201,19 @@
                         <p class="interestText">Over the past three years, I have grown exponentially deeper in my knowledge by researching best practices, collaborating, and working out often, in addition to being raised in a healthy family.</p>
                     </div> -->
                     <div class="eachInterestDiv">
-                        <h2 class="interestHeader">Timelapsing and Photography:</h2>
+                        <h2 class="interestHeader">Timelapsing and Photography</h2>
                         <p class="interestText">I have always been fascinated by the beauty of nature. Recently, I built my own timelapsing setup using an Arduino and other special camera accessories. I then edit and finalize them through Lightroom, Photoshop, and Premiere Pro, evidenced in <a href="https://youtu.be/UJ8Q9-o8UwI">The Glorious Grind</a>, my first compilation.
                     </div>
                     <div class="eachInterestDiv">
-                        <h2 class="interestHeader">Piano and Music:</h2>
+                        <h2 class="interestHeader">Piano and Music</h2>
                         <p class="interestText">I have played piano since the age of 8, always enjoying the beauty of music and building neural connections. You can view my current repertoire on YouTube at <a href="https://www.youtube.com/playlist?list=PLnfurFeNccJtVRPSF-hjuwY2bJ7h5oNHz">Kieran's Piano Songs</a>. I also composed two original pieces of music, <a href="https://youtu.be/fcAefgC-RQk">Whitewater</a> and the soundtrack for <a href="https://youtu.be/UJ8Q9-o8UwI">The Glorious Grind</a>.
                     </div>
                     <div class="eachInterestDiv">
-                        <h2 class="interestHeader">Service and Involvement:</h2>
+                        <h2 class="interestHeader">Service and Involvement</h2>
                         <p class="interestText">Throughout my life, I have always sought to serve and sacrifice for others, following the fire of passion within me. I am an active participant in everything I do, I often tutor my classmates and coworkers, and I am typically appointed to leadership positions within service groups and other clubs.</p>
                    </div>
                     <div class="eachInterestDiv">
-                        <h2 class="interestHeader">Fitness, Health, and Wellness:</h2>
+                        <h2 class="interestHeader">Fitness, Health, and Wellness</h2>
                         <p class="interestText">Over the past five years, I have grown exponentially deeper in my knowledge by researching best practices, collaborating, and working out often, in addition to being raised in a healthy family. I also enjoy the culinary arts, experimenting and perfecting a variety of delicious recipes.</p>
                     </div>
                 </div>
@@ -227,7 +233,7 @@
                     <p class="footerInfo">Available Upon Request</p>
 
                     <br>
-                    <p class="footerInfo"><a href="https://drive.google.com/file/d/1vKOLQknJNMIQ5VQG1zX0gqde9K5-visa/view?usp=sharing">Resume</a></p>
+                    <p class="footerInfo"><a href="https://drive.google.com/file/d/1vKOLQknJNMIQ5VQG1zX0gqde9K5-visa/view?usp=sharing">My Resume</a></p>
                     
                     <!-- <p style="display:none" class="footerInfo document"><a href="mailto:kieran.j@mcwilliams.cc">Resume</a></p>
                     <p style="display:none" class="footerInfo document"><a href="mailto:kieran.j@mcwilliams.cc">Transcript</a></p> -->
