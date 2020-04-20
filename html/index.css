@@ -42,7 +42,7 @@ body, h2, h3 {
     top: 0;
     left: 0;
     height: 8vh;
-    width: 100%;
+    width: 100vw;
     background-color: rgba(0, 0, 0, .25);
     box-shadow: 0px 1px 4px rgba(0,0,0,.5);
 }
@@ -150,7 +150,7 @@ body, h2, h3 {
     z-index: 100;
     top: 8vh;
     height: 0px;
-    width: 100%;
+    width: 100vw;
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -208,7 +208,7 @@ body, h2, h3 {
 
 /*Body and sections*/
 #bodyContainer {
-    width: 100%;
+    width: 100vw;
     height: 92%;
     margin-top: 8vh;
     text-align: center;
@@ -260,6 +260,7 @@ body, h2, h3 {
     padding: 0;
     height: 80vh;
     margin-top: -6vh;
+    background: none;
 }
 
 #profileDivBackground::before {
@@ -1212,6 +1213,21 @@ body, h2, h3 {
 
     .containerDivHeader {
         font-size: 2.2em;
+    }
+
+    #profileDivBackground::before {
+        /* background: url(Summer_Colorado_Hiking_Sunset_Optimized.jpg) 75% center no-repeat; */
+        background: url(Summer_Colorado_Hiking_Sunset_Mobile_Optimized.jpg) 80% center no-repeat;
+        background-size: cover;
+        filter: none;
+    }
+
+    #profileDiv::before, #tiltedAboutDivBackground {
+        display: none;
+    }
+
+    #resumePictureContainer {
+        display: none;
     }
 
     #profilePicture {
