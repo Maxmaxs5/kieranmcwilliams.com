@@ -822,7 +822,7 @@ body, h2, h3 {
     }
     
     #email, #myResume, #resumePictureHeader > a {
-        font-size: .75em;
+        font-size: .8em;
     }
 }
 
@@ -842,8 +842,8 @@ body, h2, h3 {
     }
 
     #profileDivBackground::before {
-        /* background: url(Summer_Colorado_Hiking_Sunset_Optimized.jpg) 75% center no-repeat; */
         background: url(Summer_Colorado_Hiking_Sunset_Mobile_Optimized.jpg) 80% center no-repeat;
+        height: 105%;
         background-size: cover;
         filter: none;
     }
@@ -858,10 +858,6 @@ body, h2, h3 {
 
     #myResume {
         display: unset;
-    }
-
-    #email, #myResume {
-        margin-top: .5em;
     }
 
     #profilePictureContainer {
@@ -890,7 +886,7 @@ body, h2, h3 {
     }
     
     #email, #myResume, #resumePictureHeader > a {
-        font-size: .75em;
+        font-size: .8em;
     }
 
     #profileDivBackground::before, #aboutDiv {
@@ -972,10 +968,6 @@ body, h2, h3 {
     #nameHeader {
         font-size: 2em;
     }
-    
-    #email, #myResume, #resumePictureHeader > a {
-        font-size: .66em;
-    }
 }
 
 /*Make everything scrolled on mobile, make innerDivs 100% width, hide navbar and show mobile navbar*/
@@ -1042,8 +1034,8 @@ body, h2, h3 {
     }
 
     #profileDivBackground::before {
-        /* background: url(Summer_Colorado_Hiking_Sunset_Optimized.jpg) 72% center no-repeat; */
         background: url(Summer_Colorado_Hiking_Sunset_Mobile_Optimized.jpg) 74% center no-repeat;
+        height: 105%;
         background-size: cover;
     }
 
@@ -1068,10 +1060,6 @@ body, h2, h3 {
 
     #nameHeader {
         font-size: 1.8em;
-    }
-    
-    #email, #myResume, #resumePictureHeader > a {
-        font-size: .6em;
     }
 
     #aboutDiv {
@@ -1136,8 +1124,8 @@ body, h2, h3 {
         font-size: 1.65em;
     }
     
-    #email, #myResume, #resumePictureHeader > a {
-        font-size: .55em;
+    #email, #myResume {
+        font-size: .75em;
     }
 }
 
@@ -1152,6 +1140,10 @@ body, h2, h3 {
 
     #nameHeader {
         font-size: 1.5em;
+    }
+
+    #email, #myResume {
+        font-size: .7em;
     }
 }
 
@@ -1178,6 +1170,10 @@ body, h2, h3 {
         height: 10vh;
     }
 
+    #navbarName {
+        font-size: 4.4vh;
+    }
+
     #navbarButtonsDiv {
         display: none;
     }
@@ -1194,7 +1190,7 @@ body, h2, h3 {
         top: 14vh;
     }
 
-    .navbarButtonMobile {
+    .navbarButtonMobile, .navbarButtonMobile.icon {
         font-size: .9em;
         margin-left: 2vh;
     }
@@ -1216,8 +1212,8 @@ body, h2, h3 {
     }
 
     #profileDivBackground::before {
-        /* background: url(Summer_Colorado_Hiking_Sunset_Optimized.jpg) 75% center no-repeat; */
-        background: url(Summer_Colorado_Hiking_Sunset_Mobile_Optimized.jpg) 80% center no-repeat;
+        background: url(Summer_Colorado_Hiking_Sunset_Mobile_Optimized.jpg) 80% 80% no-repeat;
+        height: 110%;
         background-size: cover;
         filter: none;
     }
@@ -1230,17 +1226,36 @@ body, h2, h3 {
         display: none;
     }
 
-    #profilePicture {
-        height: 220px;
-        width: 220px;
+    #myResume {
+        display: unset;
     }
-    
+
+    #profilePictureContainer {
+        left: 47%;
+        height: 193px;
+        width: 193px;
+        margin-top: -10px;
+    }
+
+    #profilePicture {
+        height: 185px;
+        width: 185px;
+    }
+
+    #nameEmailResumeContainer {
+        left: 47%;
+        height: 193px;
+        margin-left: 215px;
+        margin-top: -10px;
+    }
+
     #nameHeader {
         font-size: 2em;
     }
-
-    #email {
-        font-size: 1em;
+    
+    #email, #myResume {
+        font-size: .8em;
+        margin-bottom: 2vh;
     }
 
     #aboutText {
@@ -1261,5 +1276,26 @@ body, h2, h3 {
     .footerInfo {
         font-size: .9em;
         margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-height: 0px) and (max-height: 450px) and (min-width: 0px) and (max-width: 650px) and (orientation: landscape) {
+    #profilePictureContainer {
+        height: 175px;
+        width: 175px;
+    }
+
+    #profilePicture {
+        height: 168px;
+        width: 168px;
+    }
+
+    #nameEmailResumeContainer {
+        height: 175px;
+        margin-left: 182px;
+    }
+
+    #nameHeader {
+        font-size: 1.8em;
     }
 }
