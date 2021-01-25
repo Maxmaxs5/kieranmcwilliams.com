@@ -47,6 +47,10 @@ body, h2, h3 {
     box-shadow: 0px 1px 4px rgba(0,0,0,.5);
 }
 
+#navbar a {
+    text-decoration: none;
+}
+
 #navbarContainer {
     display: flex;
     height: 8vh;
@@ -143,6 +147,7 @@ body, h2, h3 {
     border-color: var(--main-color-blue, #00a0d0);
 }
 
+
 /* Mobile Navbar */
 #mobileNavbar {
     position: fixed;
@@ -187,9 +192,6 @@ body, h2, h3 {
     color: var(--main-color-blue, #00a0d0);
 }
 
-#navbar a {
-    text-decoration: none;
-}
 
 /*Navbar jumps and scrolls*/
 .navbarJump {
@@ -219,8 +221,27 @@ body, h2, h3 {
     padding: 6vh 0;
     color: white;
     color: var(--main-color-light, white);
+}
+
+.containerDiv:nth-child(odd):not(#profileDivBackground):not(#footerDiv):before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: skewY(-2.5deg);
     background-color: #00a0d0;
     background-color: var(--main-color-blue, #00a0d0);
+}
+
+/* Every other odd */
+.containerDiv:nth-child(4n + 1):not(#profileDivBackground):not(#footerDiv):before {
+    transform: skewY(2.5deg);
+}
+
+.containerDiv:nth-child(odd):not(#profileDivBackground):not(#footerDiv) > div {
+    position: relative;
 }
 
 .containerDiv:nth-child(even) {
@@ -294,7 +315,7 @@ body, h2, h3 {
     bottom: 0;
     z-index: 30;
     background: linear-gradient(transparent, black);
-    transform: translate(0, -850%) skew(0, -10deg);
+    transform: translate(0, -850%) skewY(-10deg);
     box-shadow: 0 10px 10px 0px rgba(0, 0, 0, .2);
 }
 
@@ -306,7 +327,7 @@ body, h2, h3 {
     left: 0;
     z-index: 20;
     background: white;
-    transform: translate(0, 79.5%) skew(0, -10deg);
+    transform: translate(0, 79.5%) skewY(-10deg);
 } */
 
 #resumePictureContainer {
@@ -457,20 +478,20 @@ body, h2, h3 {
 
 
 /*About, Experience, Projects, Skills, Interests*/
-#innerProjectsDiv, #innerExperienceDiv, #innerSkillsDiv, #innerInterestsDiv {
+#innerExperienceProjectsDiv, #innerSkillsDiv, #innerInterestsDiv {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 4vh;
 }
 
-.eachProjectDiv, .eachExperienceDiv, .proficiencyDiv, .eachInterestDiv {
+.proficiencyDiv, .eachInterestDiv {
     width: 49%;
     text-align: center;
     transition: none;
 }
 
-.eachInterestDiv:nth-child(-n+2) {
+.eachInterestDiv:nth-child(-n+4) {
     margin-bottom: 4vh;
 }
 
@@ -496,12 +517,12 @@ body, h2, h3 {
     z-index: 30;
     position: absolute;
     overflow: hidden;
-    width: 150%;
+    width: 100%;
     height: 50vh;
     padding: 0;
     background: white;
-    transform: translate(-10%, -22%) rotate(-10deg);
-    box-shadow: inset 0 10px 10px 0px rgba(0, 0, 0, .2);
+    transform: translateY(-8vh) skewY(-10deg);
+    box-shadow: inset 0 20px 10px -10px rgba(0, 0, 0, .2);
 }
 
 #aboutDiv {
@@ -523,21 +544,15 @@ body, h2, h3 {
 #experienceDiv {
     position: relative;
     z-index: 50;
-    width: 100%;
-    padding: 6vh 5%;
-    transform: rotate(2.5deg) translate(-5%);
 }
 
-#experienceDiv > * {
-    transform: rotate(-2.5deg);
-}
-
-.innerExperienceDiv {
-    padding: 4vh 8vw;
+.innerExperienceProjectsDiv {
+    padding: 3vh 8vw;
     text-align: left;
 }
 
-#experienceDiv .innerExperienceDiv:nth-last-child(1) {
+#experienceDiv .innerExperienceProjectsDiv:nth-last-child(1),
+#projectsDiv .innerExperienceProjectsDiv:nth-last-child(1) {
     padding-bottom: 0;
 }
 
@@ -549,7 +564,7 @@ body, h2, h3 {
 }
 
 .entryYears {
-    margin: 1.5em 0 .5em 0;
+    margin: .75em 0 .5em 0;
     font-size: 1.15em;
     font-family: "Playfair Display", serif;
     font-weight: lighter;
@@ -558,13 +573,20 @@ body, h2, h3 {
 .entryInfo {
     margin: 0;
     font-family: "Montserrat - Font";
-    font-size: .9em;
+    font-size: .95em;
     line-height: 2em;
 }
 
 .entryHref {
     color: white;
     color: var(--main-color-light, white);
+}
+
+.projectMobileAppsDiv {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: .75em;
 }
 
 .projectButtonHref {
@@ -597,18 +619,14 @@ body, h2, h3 {
 }
 
 #googlePlayBadge {
-    height: 5rem;
+    height: 4.5rem;
     margin-bottom: -.8rem;
-    margin-top: .3rem;
+    margin-top: -.2rem;
 }
 
 #appleAppStoreBadge {
-    height: 3.3rem; 
-    width: 11.2rem;
-    margin-top: .95rem;
-
-    display: inline-block;
-    overflow: hidden;
+    height: 3.05rem;
+    width: 10.2rem;
     background: url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;
     background-size: contain;
 }
@@ -618,12 +636,7 @@ body, h2, h3 {
 }
 
 #skillsDiv {
-    width: 100%;
-    padding: 6vh 5%;
-    transform: rotate(-2.5deg) translate(-5%);
-}
-#skillsDiv > * {
-    transform: rotate(2.5deg);
+    position: relative;
 }
 
 .interestText a {
@@ -893,16 +906,16 @@ body, h2, h3 {
         margin-top: -6vh;
     }
 
-    #innerProjectsDiv, #innerExperienceDiv, #innerSkillsDiv, #innerInterestsDiv {
+    #innerExperienceProjectsDiv, #innerSkillsDiv, #innerInterestsDiv {
         display: block;
     }
     
-    .eachProjectDiv, .eachExperienceDiv, .proficiencyDiv, .eachInterestDiv {
+    .proficiencyDiv, .eachInterestDiv {
         width: 100%;
         margin-bottom: 4vh;
     }
 
-    .eachProjectDiv:nth-last-child(1), .eachExperienceDiv:nth-last-child(1), .eachInterestDiv:nth-last-child(1) {
+    .eachInterestDiv:nth-last-child(1) {
         margin-bottom: 0;
     }
 
@@ -912,6 +925,10 @@ body, h2, h3 {
 
     .experienceText, .projectText, .proficiencyText, .interestText {
         width: 95%;
+    }
+
+    .projectMobileAppsDiv {
+        justify-content: center;
     }
 
     .footerText {

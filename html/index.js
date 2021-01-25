@@ -122,7 +122,7 @@ $(document).ready(function() {
             mobileNavbar.classList.toggle("open");
             mobileNavbar.style.height = "0px";
 
-            document.getElementById("navbar").classList.remove("scrolled");
+            // document.getElementById("navbar").classList.remove("scrolled");
         }
         else {
             mobileNavbar.classList.toggle("open");
@@ -139,7 +139,7 @@ $(document).ready(function() {
             mobileNavbar.classList.remove("open");
             mobileNavbar.style.height = "0px";
 
-            document.getElementById("navbar").classList.remove("scrolled");
+            // document.getElementById("navbar").classList.remove("scrolled");
         }
     });
 });
