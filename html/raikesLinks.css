@@ -1,0 +1,52 @@
+
+* {
+    transition: all .3s;
+}
+
+body {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+
+    font-family: "Gotham - Font";
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Gotham - Font';
+    src: url('Gotham-Medium.otf');
+}
+
+.linkWrapperDiv {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 5%;
+    text-align: center;
+    align-items: center;
+}
+
+.linkWrapperDiv a {
+    font-size: 2em;
+    color: black;
+}
+
+.linkWrapperDiv a:hover {
+    color: blue;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+    .linkWrapperDiv a {
+        font-size: 1.4em;
+    }
+}
