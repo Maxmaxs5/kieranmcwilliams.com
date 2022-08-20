@@ -1,6 +1,6 @@
 
 
-//Gets yPosition of element from top of entire page, using all parents
+// Gets yPosition of element from top of entire page, using all parents
 function getPosition(element) {
   var yPosition = 0;
 
@@ -12,7 +12,7 @@ function getPosition(element) {
   return yPosition;
 }
 
-//Event listeners for resizing navbar on scroll or resize and highlighting current sections with buttons
+// Event listeners for resizing navbar on scroll or resize and highlighting current sections with buttons
 window.addEventListener("scroll", function() {
   navbarUpdates();
 });
@@ -21,12 +21,6 @@ window.addEventListener("resize", function() {
 });
 
 var navbarUpdates = function() {
-  //Testing showing scroll and device dimensions
-  document.getElementById("testScroll").innerHTML = window.pageYOffset;
-  document.getElementById("testWidth").innerHTML = document.body.clientWidth;
-  document.getElementById("testWidth2").innerHTML = window.innerWidth;
-  document.getElementById("testHeight").innerHTML = window.innerHeight;
-
   var pageYOffset = window.pageYOffset;
 
   var navbarItems = [
@@ -39,7 +33,7 @@ var navbarUpdates = function() {
   ];
   var navbarButtons = document.getElementsByClassName("navbarButton");
 
-  //Add navbar buttons to array
+  // Add navbar buttons to array
   navbarItems = navbarItems.concat(Array.from(navbarButtons));
 
   // // If scrolled or always on mobile
@@ -109,7 +103,6 @@ var navbarUpdates = function() {
   }
 }
 
-//Run at startup
 $(document).ready(function() {
   navbarUpdates();
 
